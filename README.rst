@@ -44,5 +44,5 @@ Either
 
     python setup.py install
 
-or just drop the ``toseq.py`` file into some folder where it can be executed.
+or just drop the ``multiplot.py`` file into some folder where it can be executed.
 
