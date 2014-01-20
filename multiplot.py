@@ -30,7 +30,6 @@ def page(files):
     width = (1 / cols) - 0.02
     # head
     yield r'''
-\thispagestyle{empty}
 \begin{figure}
   \centering
   \begin{tabular}{%s}
@@ -71,6 +70,7 @@ def document(files, per_page=None):
     margin = 'left={0}cm,right={0}cm,top={1}cm,bottom={1}cm'.format(xs, ys)
     yield r'\geometry{a4paper,%s}' % (margin,)
     yield r'\begin{document}'
+    yield r'\pagestyle{empty}'
     # pages
     for p in range((len(files)+per_page-1) // per_page):
         for line in page(files[p*per_page:(p+1)*per_page]):
