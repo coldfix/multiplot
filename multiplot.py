@@ -27,7 +27,8 @@ def page(files):
     log2 = (len(files)-1).bit_length()
     rows = 2 ** ((log2 + 1) // 2)
     cols = 2 ** (log2 // 2)
-    width = (1 / cols) - 0.02
+    width = r'{%s\textwidth}' % ((1 / cols) - 0.02,)
+    height = r'{%s\textheight}' % ((1 / rows) - 0.02,)
     # head
     yield r'''
 \begin{figure}
@@ -42,7 +43,7 @@ def page(files):
             if i < len(files):
                 base, ext = os.path.splitext(os.path.abspath(files[i]))
                 file = '{%s}%s' % (base, ext)
-                yield r'\resizebox{%s \linewidth}{!}{\includegraphics{%s}}%s' % (width, file, nl)
+                yield r'\includegraphics[width=%s,height=%s,keepaspectratio]{%s}%s' % (width, height, file, nl)
             else:
                 yield nl
     # foot
@@ -64,7 +65,7 @@ def document(files, per_page=None):
     else:
         yield r'\documentclass[landscape]{article}'
     yield r'''
-\usepackage{graphics}
+\usepackage{graphicx}
 \usepackage{geometry}'''
     xs, ys = sqrt(2), 1
     margin = 'left={0}cm,right={0}cm,top={1}cm,bottom={1}cm'.format(xs, ys)
