@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 """
 multiplot - squeeze multiple images into one page.
 
