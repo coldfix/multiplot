@@ -34,3 +34,15 @@ Options::
     -o <output>     Set output file name (default is 'multi.pdf')
     -h --help       Show this help
     -v --version    Show version number
+
+Installation
+~~~~~~~~~~~~
+
+Either
+
+.. code-block:: bash
+
+    python setup.py install
+
+or just drop the ``toseq.py`` file into some folder where it can be executed.
+
