@@ -32,8 +32,8 @@ def page(files):
     yield r'''
 \thispagestyle{empty}
 \begin{figure}
-  \begin{center}
-    \begin{tabular}{%s}
+  \centering
+  \begin{tabular}{%s}
 ''' % ('c' * cols,)
     # graphics
     for r in range(rows):
@@ -48,8 +48,7 @@ def page(files):
                 yield nl
     # foot
     yield r'''
-    \end{tabular}
-  \end{center}
+  \end{tabular}
 \end{figure}
 '''
 
