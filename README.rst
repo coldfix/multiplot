@@ -1,7 +1,8 @@
 multiplot
 ---------
 
-Little script to squeeze multiple image files into one PDF document.
+Little script to squeeze multiple image files (assumed to be landscape) into
+one PDF document.
 
 
 License
@@ -45,4 +46,12 @@ Either
     python setup.py install
 
 or just drop the ``multiplot.py`` file into some folder where it can be executed.
+
+
+Example
+~~~~~~~
+
+.. code-block:: bash
+
+    printf '%s\n' graph/*.pdf | sort -V | xargs multiplot -p4
 
